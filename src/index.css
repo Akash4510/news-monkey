@@ -1,13 +1,73 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --clr-primary: hsl(24, 76%, 53%);
+  --clr-primary-dark: hsl(24, 76%, 43%);
+  --clr-primary-light: hsl(24, 76%, 65%);
+  --clr-secondary: hsl(24, 90%, 95%);
+  --clr-bg: hsl(0, 0%, 99%);
+  --clr-text: hsl(244, 66%, 17%);
+
+  --clr-accent: hsl(25, 90%, 96%);
+
+  --gradient-background: linear-gradient(
+    180deg,
+    var(--clr-accent) 0%,
+    var(--clr-bg) 100%
+  );
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--clr-primary);
+  color: var(--clr-bg);
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  color: var(--clr-text);
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem 0 3rem;
 }

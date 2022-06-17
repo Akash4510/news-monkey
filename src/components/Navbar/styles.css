@@ -1,0 +1,81 @@
+.nav-bar {
+  position: sticky;
+  top: 0;
+  padding: 12px 0;
+  background-color: var(--clr-bg);
+  box-shadow: 0px 0.3px 8px hsla(0, 2%, 12%, 0.108);
+  z-index: 100;
+}
+
+.nav-bar.shadow {
+  background-color: hsla(0, 0%, 99%, 0.978);
+  box-shadow: 0px 2px 4px 1px hsla(0, 2%, 12%, 0.19);
+}
+
+.nav-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu,
+.nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo .text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.logo .text span {
+  color: var(--clr-primary);
+}
+
+.logo .img {
+  width: 28px;
+}
+
+.nav-link {
+  color: var(--clr-text);
+  padding: 4px 6px;
+  position: relative;
+}
+
+.nav-link,
+.nav-link::after,
+.nav-link::before {
+  transition: all .3s;
+}
+
+.nav-link::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: var(--clr-primary);
+  height: 2px;
+}
+
+.nav-link:hover {
+  color: var(--clr-primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}

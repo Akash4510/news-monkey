@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+.container {
+  max-width: 1080px;
+  width: 100%;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  padding: 6px 15px;
+  border: 1px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: fit-content;
+  gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn a {
+  color: var(--clr-text);
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn-primary {
+  background-color: var(--clr-primary);
+  border-color: var(--clr-primary);
 }
 
-.App-link {
-  color: #61dafb;
+.btn-primary,
+.btn-primary a {
+  color: var(--clr-bg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.btn-primary:hover {
+  background-color: var(--clr-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--clr-secondary);
+  border-color: var(--clr-primary);
+}
+
+.btn-secondary,
+.btn-secondary a {
+  color: var(--clr-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--clr-bg);
+}
+
+@media (max-width: 1080px) {
+  .container {
+    max-width: 95%;
   }
 }

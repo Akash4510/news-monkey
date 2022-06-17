@@ -1,0 +1,25 @@
+.container {
+  text-align: center;
+}
+
+.news-item-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.page-nav-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
