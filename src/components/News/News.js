@@ -20,6 +20,7 @@ export class News extends Component {
     pageSize: 12,
   }
 
+  apiEndpoint = "https://newsapi.org/v2/top-headlines";
   apiKey = process.env.REACT_APP_NEWS_API;
 
   articlesFetched = 0;
@@ -39,19 +40,13 @@ export class News extends Component {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  getNews = async () => {
-    let endpoint = "https://newsapi.org/v2/top-headlines";
-    let url = `${endpoint}?&country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+  async componentDidMount() {
+    let url = `${this.apiEndpoint}?&country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.props.setProgress(10);
     let data = await fetch(url);
     let parsedData = await data.json();
     this.props.setProgress(100);
     this.articlesFetched += this.props.pageSize;
-    return parsedData;
-  }
-
-  async componentDidMount() {
-    let parsedData = await this.getNews();
     this.setState({
       articles: parsedData.articles,
       loading: false,
@@ -60,9 +55,17 @@ export class News extends Component {
   }
 
   fetchMoreData = async () => {
-    this.setState({ page: this.state.page + 1 });
-    let parsedData = await this.getNews();
-    this.setState({ articles: this.state.articles.concat(parsedData.articles), loading: false });
+    let url = `${this.apiEndpoint}?&country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+    this.props.setProgress(10);
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    this.props.setProgress(100);
+    this.articlesFetched += this.props.pageSize;
+    this.setState({
+      articles: this.state.articles.concat(parsedData.articles),
+      loading: false,
+      page: this.state.page + 1
+    });
   }
 
   render() {
