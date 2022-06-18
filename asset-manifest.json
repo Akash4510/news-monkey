@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/news-monkey/static/css/main.80d5bb7d.css",
+    "main.js": "/news-monkey/static/js/main.69f6ef0c.js",
+    "static/media/logo.png": "/news-monkey/static/media/logo.07b9d44d4aa8d5ce1e85.png",
+    "static/media/loading.gif": "/news-monkey/static/media/loading.c2b53a5563f357f5f409.gif",
+    "index.html": "/news-monkey/index.html",
+    "main.80d5bb7d.css.map": "/news-monkey/static/css/main.80d5bb7d.css.map",
+    "main.69f6ef0c.js.map": "/news-monkey/static/js/main.69f6ef0c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80d5bb7d.css",
+    "static/js/main.69f6ef0c.js"
+  ]
+}
